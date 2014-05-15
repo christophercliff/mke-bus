@@ -1,0 +1,56 @@
+{
+  "name": "mke-bus",
+  "version": "0.0.0",
+  "author": "Christopher Cliff <ctcliff@gmail.com>",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/christophercliff/mke-bus"
+  },
+  "bugs": {
+    "url": "https://github.com/christophercliff/mke-bus/issues"
+  },
+  "keywords": [
+    "Milwaukee",
+    "Bus"
+  ],
+  "main": "./lib/server",
+  "scripts": {
+    "jshint": "./node_modules/.bin/jshint ./lib/ ./test/",
+    "test": "npm run jshint && ./node_modules/.bin/mocha --reporter spec --require should --grep ''",
+    "dev": "./node_modules/.bin/supervisor -e 'js' ./lib/server"
+  },
+  "dependencies": {
+    "async": "^0.8.0",
+    "hapi": "^4.1.2",
+    "hoek": "^2.1.0",
+    "joi": "^3.1.0",
+    "request": "^2.34.0",
+    "underscore": "^1.6.0",
+    "xml2js": "^0.4.2"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.0",
+    "mocha": "^1.18.2",
+    "should": "^3.3.1",
+    "supertest": "^0.12.1",
+    "supervisor": "^0.6.0"
+  },
+  "jshintConfig": {
+    "eqeqeq": true,
+    "immed": true,
+    "latedef": "nofunc",
+    "newcap": true,
+    "quotmark": "single",
+    "trailing": true,
+    "unused": true,
+    "asi": true,
+    "boss": true,
+    "expr": true,
+    "laxbreak": true,
+    "laxcomma": true,
+    "scripturl": true,
+    "sub": true,
+    "loopfunc": true
+  }
+}
