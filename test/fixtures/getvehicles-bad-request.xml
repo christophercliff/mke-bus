@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<bustime-response>
+    <error>
+        <rt>20</rt>
+        <msg>No data found for parameter</msg>
+    </error>
+</bustime-response>

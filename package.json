@@ -18,13 +18,16 @@
   "scripts": {
     "jshint": "./node_modules/.bin/jshint ./lib/ ./test/",
     "test": "npm run jshint && ./node_modules/.bin/mocha --reporter spec --require should --grep ''",
-    "dev": "./node_modules/.bin/supervisor -e 'js' ./lib/server"
+    "dev": "./node_modules/.bin/supervisor -e 'js' ./",
+    "start": "node ./"
   },
   "dependencies": {
     "async": "^0.8.0",
+    "boom": "^2.4.1",
     "hapi": "^4.1.2",
     "hoek": "^2.1.0",
     "joi": "^3.1.0",
+    "moment": "^2.6.0",
     "request": "^2.34.0",
     "underscore": "^1.6.0",
     "xml2js": "^0.4.2"

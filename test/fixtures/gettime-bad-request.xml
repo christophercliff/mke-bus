@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<bustime-response>
+    <error>
+        <msg>Invalid API access key supplied</msg>
+    </error>
+</bustime-response>
