@@ -154,6 +154,60 @@ describe('/get/all/stops/where', function(){
 
 })
 
+describe('/get/all/patterns/where', function(){
+
+    it('should return 400 for bad requests', function(done){
+        supertest(HOST)
+            .get('/get/all/patterns/where')
+            .expect(400)
+            .end(function(err, res){
+                if (err) throw err
+                shouldBeHapiFailure(res.body)
+                return done()
+            })
+    })
+
+    it('should get the patterns', function(done){
+        supertest(HOST)
+            .get(['/get/all/patterns/where', qs({
+                route_id: '21'
+            })].join('?'))
+            .expect(200)
+            .end(function(err, res){
+                if (err) throw err
+                shouldBeHapiSuccess(res.body)
+                return done()
+            })
+    })
+
+})
+
+describe('/get/pattern/called/{pattern_id}', function(){
+
+    it('should return 502 for bad gateway', function(done){
+        supertest(HOST)
+            .get('/get/pattern/called/abc')
+            .expect(502)
+            .end(function(err, res){
+                if (err) throw err
+                shouldBeHapiFailure(res.body)
+                return done()
+            })
+    })
+
+    it('should get the pattern', function(done){
+        supertest(HOST)
+            .get('/get/pattern/called/13')
+            .expect(200)
+            .end(function(err, res){
+                if (err) throw err
+                shouldBeHapiSuccess(res.body)
+                return done()
+            })
+    })
+
+})
+
 describe('proxy.getGatewayError()', function(){
 
     it('should parse error messages', function(done){
