@@ -8,6 +8,11 @@ var server = require('../')
 var supertest = require('supertest')
 
 var HOST = 'http://127.0.0.1:8000'
+var ROUTE_ID = '21'
+var STOP_ID = '3635'
+var VEHICLE_ID = '5336'
+var DIRECTION = 'EAST'
+var PATTERN_ID = 13
 
 before(function(done){
     server.on('start', done)
@@ -22,6 +27,22 @@ describe('/get/time', function(){
             .end(function(err, res){
                 if (err) throw err
                 shouldBeHapiSuccess(res.body)
+                return done()
+            })
+    })
+
+})
+
+describe('/get/all/routes', function(){
+
+    it('should get the routes', function(done){
+        supertest(HOST)
+            .get('/get/all/routes')
+            .expect(200)
+            .end(function(err, res){
+                if (err) throw err
+                shouldBeHapiSuccess(res.body)
+                ROUTE_ID = _.first(res.body.with).id || ROUTE_ID
                 return done()
             })
     })
@@ -44,12 +65,13 @@ describe('/get/all/vehicles/where', function(){
     it('should get the vehicles', function(done){
         supertest(HOST)
             .get(['/get/all/vehicles/where', qs({
-                route_id: '21'
+                route_id: ROUTE_ID
             })].join('?'))
             .expect(200)
             .end(function(err, res){
                 if (err) throw err
                 shouldBeHapiSuccess(res.body)
+                VEHICLE_ID = _.first(res.body.with).id || VEHICLE_ID
                 return done()
             })
     })
@@ -71,22 +93,7 @@ describe('/get/vehicle/called/{vehicle_id}', function(){
 
     it('should get the vehicle', function(done){
         supertest(HOST)
-            .get('/get/vehicle/called/5115')
-            .expect(200)
-            .end(function(err, res){
-                if (err) throw err
-                shouldBeHapiSuccess(res.body)
-                return done()
-            })
-    })
-
-})
-
-describe('/get/all/routes', function(){
-
-    it('should get the routes', function(done){
-        supertest(HOST)
-            .get('/get/all/routes')
+            .get('/get/vehicle/called/' + VEHICLE_ID)
             .expect(200)
             .end(function(err, res){
                 if (err) throw err
@@ -113,12 +120,13 @@ describe('/get/all/directions', function(){
     it('should get the directions', function(done){
         supertest(HOST)
             .get(['/get/all/directions/where', qs({
-                route_id: '21'
+                route_id: ROUTE_ID
             })].join('?'))
             .expect(200)
             .end(function(err, res){
                 if (err) throw err
                 shouldBeHapiSuccess(res.body)
+                DIRECTION = _.first(res.body.with).id || DIRECTION
                 return done()
             })
     })
@@ -141,13 +149,14 @@ describe('/get/all/stops/where', function(){
     it('should get the stops', function(done){
         supertest(HOST)
             .get(['/get/all/stops/where', qs({
-                route_id: '21',
-                direction: 'EAST'
+                route_id: ROUTE_ID,
+                direction: DIRECTION
             })].join('?'))
             .expect(200)
             .end(function(err, res){
                 if (err) throw err
                 shouldBeHapiSuccess(res.body)
+                STOP_ID = _.first(res.body.with).id || STOP_ID
                 return done()
             })
     })
@@ -170,12 +179,13 @@ describe('/get/all/patterns/where', function(){
     it('should get the patterns', function(done){
         supertest(HOST)
             .get(['/get/all/patterns/where', qs({
-                route_id: '21'
+                route_id: ROUTE_ID
             })].join('?'))
             .expect(200)
             .end(function(err, res){
                 if (err) throw err
                 shouldBeHapiSuccess(res.body)
+                PATTERN_ID = _.first(res.body.with).id || PATTERN_ID
                 return done()
             })
     })
@@ -197,7 +207,67 @@ describe('/get/pattern/called/{pattern_id}', function(){
 
     it('should get the pattern', function(done){
         supertest(HOST)
-            .get('/get/pattern/called/13')
+            .get('/get/pattern/called/' + PATTERN_ID)
+            .expect(200)
+            .end(function(err, res){
+                if (err) throw err
+                shouldBeHapiSuccess(res.body)
+                return done()
+            })
+    })
+
+})
+
+describe('/get/all/predictions/where', function(){
+
+    it('should return 400 for bad requests', function(done){
+        supertest(HOST)
+            .get('/get/all/predictions/where')
+            .expect(400)
+            .end(function(err, res){
+                if (err) throw err
+                shouldBeHapiFailure(res.body)
+                return done()
+            })
+    })
+
+    it('should get the predictions', function(done){
+        supertest(HOST)
+            .get(['/get/all/predictions/where', qs({
+                stop_id: STOP_ID,
+                route_id: ROUTE_ID,
+                take: '1'
+            })].join('?'))
+            .expect(200)
+            .end(function(err, res){
+                if (err) throw err
+                shouldBeHapiSuccess(res.body)
+                res.body.with.length.should.equal(1)
+                return done()
+            })
+    })
+
+})
+
+describe('/get/all/alerts/where', function(){
+
+    it('should return 400 for bad requests', function(done){
+        supertest(HOST)
+            .get('/get/all/alerts/where')
+            .expect(400)
+            .end(function(err, res){
+                if (err) throw err
+                shouldBeHapiFailure(res.body)
+                return done()
+            })
+    })
+
+    it('should get the alerts', function(done){
+        supertest(HOST)
+            .get(['/get/all/alerts/where', qs({
+                route_id: ROUTE_ID,
+                direction: DIRECTION
+            })].join('?'))
             .expect(200)
             .end(function(err, res){
                 if (err) throw err
