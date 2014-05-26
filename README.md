@@ -8,7 +8,7 @@ This project aims to provide an independent, open and open source interface to t
 
 - [x] Publicly accessible--no access key required
 - [x] Web and human friendly [HAPI-REST][hapi] API
-- [x] Allow cross-domain requests via [JSONP][jsonp] or [CORS][cors]
+- [x] Cross-domain requests with [JSONP][jsonp] or [CORS][cors]
 - [x] Fully documented API
 - [ ] JavaScript client (for the browser and node.js)
 - [ ] Interface for spatial querying bus stops
