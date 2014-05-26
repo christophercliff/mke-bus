@@ -2,11 +2,13 @@
 
 ## Development
 
+Run the server locally in development mode:
+
 ```
 $ npm install && npm run dev
 ```
 
-## Tests
+Run tests:
 
 ```
 $ npm test
