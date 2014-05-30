@@ -9,7 +9,7 @@ This project aims to provide an independent, open and open source interface to t
 - [x] Publicly accessible—no access key required
 - [x] Web and human friendly [HAPI-REST][hapi] API
 - [x] Cross-domain requests with [JSONP][jsonp] or [CORS][cors]
-- [x] Fully documented API
+- [x] [Fully documented API][herokuapp]
 - [ ] Interface for spatial querying bus stops
 - [ ] Streaming interface for bus arrival times
 - [ ] JavaScript client (for the browser and node.js)
