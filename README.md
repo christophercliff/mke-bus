@@ -6,13 +6,13 @@ This project aims to provide an independent, open and open source interface to t
 
 ## Features
 
-- [x] Publicly accessible--no access key required
+- [x] Publicly accessible—no access key required
 - [x] Web and human friendly [HAPI-REST][hapi] API
 - [x] Cross-domain requests with [JSONP][jsonp] or [CORS][cors]
 - [x] Fully documented API
-- [ ] JavaScript client (for the browser and node.js)
 - [ ] Interface for spatial querying bus stops
 - [ ] Streaming interface for bus arrival times
+- [ ] JavaScript client (for the browser and node.js)
 - [ ] User-facing web and mobile applications
 
 ## Contributing
