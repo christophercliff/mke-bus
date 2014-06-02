@@ -1,24 +1,32 @@
 var _ = require('underscore')
 var async = require('async')
+var config = require('../lib/config')
 var fs = require('fs')
 var path = require('path')
 var proxy = require('../lib/proxy')
 var qs = require('querystring').stringify
-var server = require('../')
 var supertest = require('supertest')
 
-var HOST = 'http://127.0.0.1:8000'
+var HOST = [
+    'http://',
+    config.server.host,
+    ':',
+    config.server.port
+].join('')
 var ROUTE_ID = '21'
 var STOP_ID = '3635'
 var VEHICLE_ID = '5336'
 var DIRECTION = 'EAST'
 var PATTERN_ID = 13
+var TIMEOUT = 5e3
 
 before(function(done){
-    server.on('start', done)
+    require('../').on('start', done)
 })
 
 describe('/get/time', function(){
+
+    this.timeout(TIMEOUT)
 
     it('should get the time', function(done){
         supertest(HOST)
@@ -35,6 +43,8 @@ describe('/get/time', function(){
 
 describe('/get/all/routes', function(){
 
+    this.timeout(TIMEOUT)
+
     it('should get the routes', function(done){
         supertest(HOST)
             .get('/get/all/routes')
@@ -50,6 +60,8 @@ describe('/get/all/routes', function(){
 })
 
 describe('/get/all/vehicles/where', function(){
+
+    this.timeout(TIMEOUT)
 
     it('should return 400 for bad requests', function(done){
         supertest(HOST)
@@ -80,6 +92,8 @@ describe('/get/all/vehicles/where', function(){
 
 describe('/get/vehicle/called/{vehicle_id}', function(){
 
+    this.timeout(TIMEOUT)
+
     it('should return 502 for bad gateway', function(done){
         supertest(HOST)
             .get('/get/vehicle/called/abc')
@@ -105,6 +119,8 @@ describe('/get/vehicle/called/{vehicle_id}', function(){
 })
 
 describe('/get/all/directions', function(){
+
+    this.timeout(TIMEOUT)
 
     it('should return 400 for bad requests', function(done){
         supertest(HOST)
@@ -134,6 +150,8 @@ describe('/get/all/directions', function(){
 })
 
 describe('/get/all/stops/where', function(){
+
+    this.timeout(TIMEOUT)
 
     it('should return 400 for bad requests', function(done){
         supertest(HOST)
@@ -165,6 +183,8 @@ describe('/get/all/stops/where', function(){
 
 describe('/get/all/patterns/where', function(){
 
+    this.timeout(TIMEOUT)
+
     it('should return 400 for bad requests', function(done){
         supertest(HOST)
             .get('/get/all/patterns/where')
@@ -194,6 +214,8 @@ describe('/get/all/patterns/where', function(){
 
 describe('/get/pattern/called/{pattern_id}', function(){
 
+    this.timeout(TIMEOUT)
+
     it('should return 502 for bad gateway', function(done){
         supertest(HOST)
             .get('/get/pattern/called/abc')
@@ -219,6 +241,8 @@ describe('/get/pattern/called/{pattern_id}', function(){
 })
 
 describe('/get/all/predictions/where', function(){
+
+    this.timeout(TIMEOUT)
 
     it('should return 400 for bad requests', function(done){
         supertest(HOST)
@@ -251,6 +275,8 @@ describe('/get/all/predictions/where', function(){
 
 describe('/get/all/alerts/where', function(){
 
+    this.timeout(TIMEOUT)
+
     it('should return 400 for bad requests', function(done){
         supertest(HOST)
             .get('/get/all/alerts/where')
@@ -279,6 +305,8 @@ describe('/get/all/alerts/where', function(){
 })
 
 describe('proxy.getGatewayError()', function(){
+
+    this.timeout(TIMEOUT)
 
     it('should parse error messages', function(done){
         var errors = _.map({
