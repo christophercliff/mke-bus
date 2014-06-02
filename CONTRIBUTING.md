@@ -2,14 +2,19 @@
 
 ## Development
 
-Run the server locally in development mode:
+Clone the development environment and server, then create the virtual machine with [Vagrant][vagrant]:
 
 ```
-$ npm install && npm run dev
+$ git clone git@github.com:christophercliff/mke-bus-env.git
+$ cd ./mke-bus-env/
+$ git clone git@github.com:christophercliff/mke-bus.git
+$ vagrant up && vagrant ssh
 ```
 
-Run tests:
+Once you're in the virtual machine, run the tests and start the server in development mode:
 
 ```
-$ npm test
+$ cd /mke-bus/ && npm test && npm run dev
 ```
+
+[vagrant]: http://www.vagrantup.com/
