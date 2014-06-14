@@ -1,0 +1,638 @@
+[
+  {
+    "method": "get",
+    "path": "/get/time",
+    "validate": {
+      "params": null,
+      "query": null
+    }
+  },
+  {
+    "method": "get",
+    "path": "/get/health",
+    "validate": {
+      "params": null,
+      "query": null
+    }
+  },
+  {
+    "method": "get",
+    "path": "/get/all/routes",
+    "validate": {
+      "params": null,
+      "query": null
+    }
+  },
+  {
+    "method": "get",
+    "path": "/get/all/stops/where",
+    "validate": {
+      "params": null,
+      "query": {
+        "isJoi": true,
+        "_type": "object",
+        "_settings": null,
+        "_valids": {
+          "_set": []
+        },
+        "_invalids": {
+          "_set": []
+        },
+        "_tests": [],
+        "_refs": [],
+        "_flags": {},
+        "_description": null,
+        "_unit": null,
+        "_notes": [],
+        "_tags": [],
+        "_examples": [],
+        "_meta": [],
+        "_inner": {
+          "children": [
+            {
+              "key": "route_id",
+              "schema": {
+                "isJoi": true,
+                "_type": "string",
+                "_settings": null,
+                "_valids": {
+                  "_set": []
+                },
+                "_invalids": {
+                  "_set": [
+                    ""
+                  ]
+                },
+                "_tests": [],
+                "_refs": [],
+                "_flags": {
+                  "presence": "required"
+                },
+                "_description": null,
+                "_unit": null,
+                "_notes": [],
+                "_tags": [],
+                "_examples": [],
+                "_meta": [],
+                "_inner": {}
+              }
+            },
+            {
+              "key": "direction",
+              "schema": {
+                "isJoi": true,
+                "_type": "string",
+                "_settings": null,
+                "_valids": {
+                  "_set": []
+                },
+                "_invalids": {
+                  "_set": [
+                    ""
+                  ]
+                },
+                "_tests": [],
+                "_refs": [],
+                "_flags": {
+                  "presence": "required"
+                },
+                "_description": null,
+                "_unit": null,
+                "_notes": [],
+                "_tags": [],
+                "_examples": [],
+                "_meta": [],
+                "_inner": {}
+              }
+            }
+          ],
+          "renames": [],
+          "dependencies": [],
+          "patterns": []
+        }
+      }
+    }
+  },
+  {
+    "method": "get",
+    "path": "/get/all/alerts/where",
+    "validate": {
+      "params": null,
+      "query": {
+        "isJoi": true,
+        "_type": "object",
+        "_settings": null,
+        "_valids": {
+          "_set": []
+        },
+        "_invalids": {
+          "_set": []
+        },
+        "_tests": [],
+        "_refs": [],
+        "_flags": {},
+        "_description": null,
+        "_unit": null,
+        "_notes": [],
+        "_tags": [],
+        "_examples": [],
+        "_meta": [],
+        "_inner": {
+          "children": [
+            {
+              "key": "route_id",
+              "schema": {
+                "isJoi": true,
+                "_type": "string",
+                "_settings": null,
+                "_valids": {
+                  "_set": []
+                },
+                "_invalids": {
+                  "_set": [
+                    ""
+                  ]
+                },
+                "_tests": [],
+                "_refs": [],
+                "_flags": {
+                  "presence": "required"
+                },
+                "_description": null,
+                "_unit": null,
+                "_notes": [],
+                "_tags": [],
+                "_examples": [],
+                "_meta": [],
+                "_inner": {}
+              }
+            },
+            {
+              "key": "direction",
+              "schema": {
+                "isJoi": true,
+                "_type": "string",
+                "_settings": null,
+                "_valids": {
+                  "_set": []
+                },
+                "_invalids": {
+                  "_set": [
+                    ""
+                  ]
+                },
+                "_tests": [],
+                "_refs": [],
+                "_flags": {},
+                "_description": null,
+                "_unit": null,
+                "_notes": [],
+                "_tags": [],
+                "_examples": [],
+                "_meta": [],
+                "_inner": {}
+              }
+            }
+          ],
+          "renames": [],
+          "dependencies": [],
+          "patterns": []
+        }
+      }
+    }
+  },
+  {
+    "method": "get",
+    "path": "/get/all/patterns/where",
+    "validate": {
+      "params": null,
+      "query": {
+        "isJoi": true,
+        "_type": "object",
+        "_settings": null,
+        "_valids": {
+          "_set": []
+        },
+        "_invalids": {
+          "_set": []
+        },
+        "_tests": [],
+        "_refs": [],
+        "_flags": {},
+        "_description": null,
+        "_unit": null,
+        "_notes": [],
+        "_tags": [],
+        "_examples": [],
+        "_meta": [],
+        "_inner": {
+          "children": [
+            {
+              "key": "route_id",
+              "schema": {
+                "isJoi": true,
+                "_type": "string",
+                "_settings": null,
+                "_valids": {
+                  "_set": []
+                },
+                "_invalids": {
+                  "_set": [
+                    ""
+                  ]
+                },
+                "_tests": [],
+                "_refs": [],
+                "_flags": {
+                  "presence": "required"
+                },
+                "_description": null,
+                "_unit": null,
+                "_notes": [],
+                "_tags": [],
+                "_examples": [],
+                "_meta": [],
+                "_inner": {}
+              }
+            }
+          ],
+          "renames": [],
+          "dependencies": [],
+          "patterns": []
+        }
+      }
+    }
+  },
+  {
+    "method": "get",
+    "path": "/get/all/vehicles/where",
+    "validate": {
+      "params": null,
+      "query": {
+        "isJoi": true,
+        "_type": "object",
+        "_settings": null,
+        "_valids": {
+          "_set": []
+        },
+        "_invalids": {
+          "_set": []
+        },
+        "_tests": [],
+        "_refs": [],
+        "_flags": {},
+        "_description": null,
+        "_unit": null,
+        "_notes": [],
+        "_tags": [],
+        "_examples": [],
+        "_meta": [],
+        "_inner": {
+          "children": [
+            {
+              "key": "route_id",
+              "schema": {
+                "isJoi": true,
+                "_type": "string",
+                "_settings": null,
+                "_valids": {
+                  "_set": []
+                },
+                "_invalids": {
+                  "_set": [
+                    ""
+                  ]
+                },
+                "_tests": [],
+                "_refs": [],
+                "_flags": {
+                  "presence": "required"
+                },
+                "_description": null,
+                "_unit": null,
+                "_notes": [],
+                "_tags": [],
+                "_examples": [],
+                "_meta": [],
+                "_inner": {}
+              }
+            }
+          ],
+          "renames": [],
+          "dependencies": [],
+          "patterns": []
+        }
+      }
+    }
+  },
+  {
+    "method": "get",
+    "path": "/get/all/directions/where",
+    "validate": {
+      "params": null,
+      "query": {
+        "isJoi": true,
+        "_type": "object",
+        "_settings": null,
+        "_valids": {
+          "_set": []
+        },
+        "_invalids": {
+          "_set": []
+        },
+        "_tests": [],
+        "_refs": [],
+        "_flags": {},
+        "_description": null,
+        "_unit": null,
+        "_notes": [],
+        "_tags": [],
+        "_examples": [],
+        "_meta": [],
+        "_inner": {
+          "children": [
+            {
+              "key": "route_id",
+              "schema": {
+                "isJoi": true,
+                "_type": "string",
+                "_settings": null,
+                "_valids": {
+                  "_set": []
+                },
+                "_invalids": {
+                  "_set": [
+                    ""
+                  ]
+                },
+                "_tests": [],
+                "_refs": [],
+                "_flags": {
+                  "presence": "required"
+                },
+                "_description": null,
+                "_unit": null,
+                "_notes": [],
+                "_tags": [],
+                "_examples": [],
+                "_meta": [],
+                "_inner": {}
+              }
+            }
+          ],
+          "renames": [],
+          "dependencies": [],
+          "patterns": []
+        }
+      }
+    }
+  },
+  {
+    "method": "get",
+    "path": "/get/all/predictions/where",
+    "validate": {
+      "params": null,
+      "query": {
+        "isJoi": true,
+        "_type": "object",
+        "_settings": null,
+        "_valids": {
+          "_set": []
+        },
+        "_invalids": {
+          "_set": []
+        },
+        "_tests": [],
+        "_refs": [],
+        "_flags": {},
+        "_description": null,
+        "_unit": null,
+        "_notes": [],
+        "_tags": [],
+        "_examples": [],
+        "_meta": [],
+        "_inner": {
+          "children": [
+            {
+              "key": "stop_id",
+              "schema": {
+                "isJoi": true,
+                "_type": "string",
+                "_settings": null,
+                "_valids": {
+                  "_set": []
+                },
+                "_invalids": {
+                  "_set": [
+                    ""
+                  ]
+                },
+                "_tests": [],
+                "_refs": [],
+                "_flags": {
+                  "presence": "required"
+                },
+                "_description": null,
+                "_unit": null,
+                "_notes": [],
+                "_tags": [],
+                "_examples": [],
+                "_meta": [],
+                "_inner": {}
+              }
+            },
+            {
+              "key": "route_id",
+              "schema": {
+                "isJoi": true,
+                "_type": "string",
+                "_settings": null,
+                "_valids": {
+                  "_set": []
+                },
+                "_invalids": {
+                  "_set": [
+                    ""
+                  ]
+                },
+                "_tests": [],
+                "_refs": [],
+                "_flags": {},
+                "_description": null,
+                "_unit": null,
+                "_notes": [],
+                "_tags": [],
+                "_examples": [],
+                "_meta": [],
+                "_inner": {}
+              }
+            },
+            {
+              "key": "take",
+              "schema": {
+                "isJoi": true,
+                "_type": "number",
+                "_settings": null,
+                "_valids": {
+                  "_set": []
+                },
+                "_invalids": {
+                  "_set": []
+                },
+                "_tests": [
+                  {
+                    "name": "integer"
+                  },
+                  {
+                    "name": "min",
+                    "arg": 1
+                  },
+                  {
+                    "name": "max",
+                    "arg": 5
+                  }
+                ],
+                "_refs": [],
+                "_flags": {},
+                "_description": null,
+                "_unit": null,
+                "_notes": [],
+                "_tags": [],
+                "_examples": [],
+                "_meta": [],
+                "_inner": {}
+              }
+            }
+          ],
+          "renames": [],
+          "dependencies": [],
+          "patterns": []
+        }
+      }
+    }
+  },
+  {
+    "method": "get",
+    "path": "/get/pattern/called/{pattern_id}",
+    "validate": {
+      "params": {
+        "isJoi": true,
+        "_type": "object",
+        "_settings": null,
+        "_valids": {
+          "_set": []
+        },
+        "_invalids": {
+          "_set": []
+        },
+        "_tests": [],
+        "_refs": [],
+        "_flags": {},
+        "_description": null,
+        "_unit": null,
+        "_notes": [],
+        "_tags": [],
+        "_examples": [],
+        "_meta": [],
+        "_inner": {
+          "children": [
+            {
+              "key": "pattern_id",
+              "schema": {
+                "isJoi": true,
+                "_type": "string",
+                "_settings": null,
+                "_valids": {
+                  "_set": []
+                },
+                "_invalids": {
+                  "_set": [
+                    ""
+                  ]
+                },
+                "_tests": [],
+                "_refs": [],
+                "_flags": {
+                  "presence": "required"
+                },
+                "_description": null,
+                "_unit": null,
+                "_notes": [],
+                "_tags": [],
+                "_examples": [],
+                "_meta": [],
+                "_inner": {}
+              }
+            }
+          ],
+          "renames": [],
+          "dependencies": [],
+          "patterns": []
+        }
+      },
+      "query": null
+    }
+  },
+  {
+    "method": "get",
+    "path": "/get/vehicle/called/{vehicle_id}",
+    "validate": {
+      "params": {
+        "isJoi": true,
+        "_type": "object",
+        "_settings": null,
+        "_valids": {
+          "_set": []
+        },
+        "_invalids": {
+          "_set": []
+        },
+        "_tests": [],
+        "_refs": [],
+        "_flags": {},
+        "_description": null,
+        "_unit": null,
+        "_notes": [],
+        "_tags": [],
+        "_examples": [],
+        "_meta": [],
+        "_inner": {
+          "children": [
+            {
+              "key": "vehicle_id",
+              "schema": {
+                "isJoi": true,
+                "_type": "string",
+                "_settings": null,
+                "_valids": {
+                  "_set": []
+                },
+                "_invalids": {
+                  "_set": [
+                    ""
+                  ]
+                },
+                "_tests": [],
+                "_refs": [],
+                "_flags": {
+                  "presence": "required"
+                },
+                "_description": null,
+                "_unit": null,
+                "_notes": [],
+                "_tags": [],
+                "_examples": [],
+                "_meta": [],
+                "_inner": {}
+              }
+            }
+          ],
+          "renames": [],
+          "dependencies": [],
+          "patterns": []
+        }
+      },
+      "query": null
+    }
+  }
+]

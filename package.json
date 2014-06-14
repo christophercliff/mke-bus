@@ -1,5 +1,5 @@
 {
-  "name": "mke-bus",
+  "name": "mke-bus-service",
   "version": "0.0.2",
   "author": "Christopher Cliff <ctcliff@gmail.com>",
   "description": "",
@@ -31,6 +31,7 @@
     "hoek": "^2.2.0",
     "joi": "^4.5.0",
     "lout": "^4.1.0",
+    "mke-bus": "0.0.1",
     "moment": "^2.6.0",
     "pg": "^3.2.0",
     "request": "^2.34.0",
