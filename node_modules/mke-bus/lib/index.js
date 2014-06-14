@@ -4,6 +4,7 @@ var own = require('own')
 var qs = require('querystring').stringify
 var routes = require('./routes.json')
 
+var DEFAULT_LOCATION = 'https://mke-bus.herokuapp.com'
 var PARAM_RE = /{.*}$/
 var PROTOTYPE = getPrototype(routes)
 
@@ -12,12 +13,16 @@ exports.create = create
 function create(options) {
     options = (options || {})
     return Object.create(PROTOTYPE, own({
-        location: options.location || 'https://mke-bus.herokuapp.com'
+        location: options.location || DEFAULT_LOCATION
     }))
 }
 
 function getMethod(route) {
     return function (options, callback) {
+        if (_.isFunction(options)) {
+            callback = options
+            options = null
+        }
         var path = route.path
         if (route.validate.params) {
             path = route.path.replace(PARAM_RE, options)
