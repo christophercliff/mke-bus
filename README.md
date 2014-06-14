@@ -10,9 +10,9 @@ This project aims to provide an independent, open and open source interface to t
 - [x] Web and human friendly [HAPI-REST][hapi] API
 - [x] Cross-domain requests with [JSONP][jsonp] or [CORS][cors]
 - [x] [Fully documented API][herokuapp]
+- [x] [JavaScript client][client] (for the browser and node.js)
 - [ ] Interface for spatial querying bus stops
 - [ ] Streaming interface for bus arrival times
-- [ ] JavaScript client (for the browser and node.js)
 - [ ] User-facing web and mobile applications
 
 ## Contributing
@@ -26,6 +26,7 @@ MIT, see [LICENSE][license] for details.
 [mcts]: http://www.ridemcts.com/
 [bustime]: http://realtime.ridemcts.com/bustime/home.jsp
 [herokuapp]: https://mke-bus.herokuapp.com/
+[client]: https://github.com/christophercliff/mke-bus-client
 [hapi]: https://github.com/jheising/HAPI
 [jsonp]: http://en.wikipedia.org/wiki/JSONP
 [cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
